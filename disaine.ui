@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tab_widget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>600</width>
+      <height>400</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Главная</string>
+     </attribute>
+     <widget class="QLabel" name="picture">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>5</y>
+        <width>480</width>
+        <height>360</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>картинка.jpg</pixmap>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_weather">
+     <attribute name="title">
+      <string>Погода</string>
+     </attribute>
+     <widget class="QTabWidget" name="tab_weather_widget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>600</width>
+        <height>370</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="current_weather">
+       <attribute name="title">
+        <string>Погода сегодня</string>
+       </attribute>
+       <widget class="QLabel" name="temperature_label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>90</y>
+          <width>100</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Температура:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="date_label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>45</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Дата:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="temperature_feels_label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>140</y>
+          <width>120</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ощущается как:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="wind_speed_label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>190</y>
+          <width>120</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Скорость ветра:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="data_label_text">
+        <property name="geometry">
+         <rect>
+          <x>65</x>
+          <y>40</y>
+          <width>150</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>00-00-0000</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="temperature_label_text">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>90</y>
+          <width>150</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0 °С</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="temperature_feels_label_text">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>140</y>
+          <width>150</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0 °С</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="wind_speed_label_text">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>190</y>
+          <width>150</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0 м/с</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="city_name_line_edit">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>10</y>
+          <width>200</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Москва</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="update_info_button">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>260</y>
+          <width>200</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Обновить информацию</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="error_label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>290</y>
+          <width>300</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {color: rgb(255, 0, 0)}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="weather_forecast">
+       <attribute name="title">
+        <string>Прогноз на 4 дня</string>
+       </attribute>
+       <widget class="QLineEdit" name="city_name_line_edit_2">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>10</y>
+          <width>200</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Москва</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="update_info_button_2">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>260</y>
+          <width>200</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Обновить информацию</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="error_label_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>290</y>
+          <width>300</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {color: rgb(255, 0, 0)}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="weather_table">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>70</y>
+          <width>540</width>
+          <height>160</height>
+         </rect>
+        </property>
+        <row>
+         <property name="text">
+          <string>Дата</string>
+         </property>
+        </row>
+        <row>
+         <property name="text">
+          <string>Температура</string>
+         </property>
+        </row>
+        <row>
+         <property name="text">
+          <string>Ощущается как</string>
+         </property>
+        </row>
+        <row>
+         <property name="text">
+          <string>Скорость ветра</string>
+         </property>
+        </row>
+        <column>
+         <property name="text">
+          <string>1</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>2</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>3</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>4</string>
+         </property>
+        </column>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_notes">
+     <attribute name="title">
+      <string>Заметки</string>
+     </attribute>
+     <widget class="QTableWidget" name="notes_table">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>0</y>
+        <width>240</width>
+        <height>360</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <column>
+       <property name="text">
+        <string>id</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Название</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>340</width>
+        <height>370</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="create_tab">
+       <attribute name="title">
+        <string>Создать</string>
+       </attribute>
+       <widget class="QLabel" name="name">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>220</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Введите название заметки:</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="title">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>300</width>
+          <height>30</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="content_label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>90</y>
+          <width>220</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Введите содержание заметки:</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="content">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>130</y>
+          <width>300</width>
+          <height>120</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="create_save_button">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>260</y>
+          <width>300</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Создать заметку</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="error_label_create">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>310</y>
+          <width>300</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {color: rgb(255, 0, 0)}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="edit_tab">
+       <attribute name="title">
+        <string>Изменить</string>
+       </attribute>
+       <widget class="QLabel" name="id_edit_label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>250</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Введите ID изменяемой заметки:</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="id_edit">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>300</width>
+          <height>30</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="title_edit_label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>120</y>
+          <width>220</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Название заметки:</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="title_edit">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>160</y>
+          <width>300</width>
+          <height>30</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="content_edit_label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>200</y>
+          <width>220</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Содержание заметки:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="error_label_edit">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>310</y>
+          <width>300</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {color: rgb(255, 0, 0)}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="edit_save_button">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>275</y>
+          <width>300</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Сохранить</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="content_edit">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>240</y>
+          <width>300</width>
+          <height>30</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="search_for_note_button">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>80</y>
+          <width>300</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Найти заметку</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="delete_tab">
+       <attribute name="title">
+        <string>Удалить</string>
+       </attribute>
+       <widget class="QLabel" name="id_delete_label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>220</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Введите ID заметки:</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="delete_button">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>90</y>
+          <width>300</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Удалить заметку</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="id_delete">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>300</width>
+          <height>30</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="error_label_delete">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>300</y>
+          <width>300</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {color: rgb(255, 0, 0)}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
